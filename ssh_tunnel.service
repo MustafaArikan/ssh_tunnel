@@ -1,0 +1,13 @@
+[Unit]
+Description=Auto-reconnecting SSH Tunnel Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/mustafa/Projects/ssh_tunnel/tunnel_manager.py
+Restart=always
+RestartSec=10
+User=mustafa
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
