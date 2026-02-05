@@ -48,7 +48,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Auto-reconnecting SSH Tunnel")
     parser.add_argument("--host", default=os.getenv("REMOTE_HOST", "user@host"), help="Remote host (user@ip)")
     parser.add_argument("--remote-port", type=int, default=int(os.getenv("REMOTE_PORT", 22224)), help="Remote port to forward")
-    parser.add_argument("--local-port", type=int, default=int(os.getenv("REMOTE_PORT", 22)), help="Local port to forward")
+    parser.add_argument("--local-port", type=int, default=int(os.getenv("LOCAL_PORT", 22)), help="Local port to forward")
     parser.add_argument("--interval", type=float, default=float(os.getenv("RECONNECT_INTERVAL", 1.0)), help="Reconnection interval in hours")
     
     args = parser.parse_args()
